@@ -113,6 +113,7 @@ body {
     display: inline-block;
     border-radius: 100px;
     transition: all .2s;
+    position: relative;
 }
 
 .button:hover{
@@ -128,4 +129,45 @@ body {
 .button-white{
     background-color: white;
     color: gray;
+}
+
+.button::after{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.button-white::after{
+    background-color: white;
+}
+
+.button:hover::after{
+    transform:  scaleX(1.5) scaleY(1.4);
+    opacity: 0;
+}
+
+@keyframes moveInButton{
+    0%{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.buttonAnimation{
+    animation-name: moveInButton;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-delay: 0.25s;
 }
