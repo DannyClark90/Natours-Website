@@ -7,7 +7,9 @@ Dark green: #28b485
 
 */
 
-*{
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,14 +18,13 @@ Dark green: #28b485
 body {
     font-family: "lato", sans-serif;
     font-weight: 400;
-    font-size: 16px;
     line-height: 1.7;
     color: #777;
     padding: 30px;
 }
 
 html {
-font-size: 10px;
+font-size: 62.5%;
 }
 
 .header {
@@ -35,13 +36,13 @@ font-size: 10px;
     position: relative;
 }
 
-.logo-box{
+.header__logo-box{
     position: absolute;
     top: 4rem;
     left: 4rem;
 }
 
-.logo{
+.header__logo{
     height: 3.5rem;
 }
 
@@ -50,7 +51,7 @@ font-size: 10px;
     margin-bottom: 6rem;
 }
 
-.heading-primary-main{
+.heading-primary--main{
     color: white;
     display: block;
     font-size: 6rem;
@@ -61,7 +62,7 @@ font-size: 10px;
     animation-duration: 2s;
 }
 
-.heading-primary-sub{
+.heading-primary--sub{
     color: white;
     display: block;
     font-size: 2rem;
@@ -72,7 +73,7 @@ font-size: 10px;
     animation-duration: 2s;
 }
 
-.text-box{
+.header__text-box{
     position: absolute;
     top: 40%;
     left: 50%;
@@ -118,19 +119,20 @@ font-size: 10px;
     border-radius: 10rem;
     transition: all .2s;
     position: relative;
+    font-size: 1.6rem;
 }
 
 .button:hover{
-    transform: translateY(-3px);
+    transform: translateY(-0.3rem);
     box-shadow: 0 1rem 2rem rgb(0, 0, 0, .2);
 }
 
 .button:active{
-    transform: translateZ(-10px);
+    transform: translateZ(-1rem);
     box-shadow: 0 0.5rem 0.1rem rgb(0, 0, 0, .2);
 }
 
-.button-white{
+.button--white{
     background-color: white;
     color: gray;
 }
@@ -148,7 +150,7 @@ font-size: 10px;
     transition: all .4s;
 }
 
-.button-white::after{
+.button--white::after{
     background-color: white;
 }
 
@@ -169,7 +171,7 @@ font-size: 10px;
     }
 }
 
-.buttonAnimation{
+.button--Animation{
     animation-name: moveInButton;
     animation-duration: 1s;
     animation-timing-function: ease-out;
